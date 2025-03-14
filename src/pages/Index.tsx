@@ -28,6 +28,9 @@ import {
   validateToken, 
   sendReport 
 } from '../utils/discordUtils';
+import Logo from '@/components/Logo';
+import GitHubLinks from '@/components/GitHubLinks';
+import FeaturesList from '@/components/FeaturesList';
 
 const Index = () => {
   const [tokens, setTokens] = useState<DiscordToken[]>([]);
@@ -122,22 +125,22 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20 px-4 py-8">
-      <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-        {/* Header */}
+      <div className="max-w-4xl mx-auto space-y-6 animate-fade-in">
+        {/* Header with Logo */}
         <div className="text-center space-y-4">
-          <Badge 
-            variant="secondary" 
-            className="animate-slide-down"
-          >
-            Discord Watchdog
-          </Badge>
+          <Logo />
           <h1 className="text-4xl font-bold tracking-tight animate-slide-up">
-            Content Reporting Tool
+            Discord Report Bot
           </h1>
           <p className="text-muted-foreground animate-slide-up">
-            Efficiently manage and report content violations
+            Uses requests to report a user's message for a certain reason repetitively
           </p>
+          <GitHubLinks />
         </div>
+
+        <Separator className="my-6" />
+        
+        <FeaturesList />
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Token Management Card */}
